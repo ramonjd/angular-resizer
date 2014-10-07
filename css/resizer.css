@@ -1,0 +1,71 @@
+
+/* 
+// sm -> small screen, tablet
+// md -> medium screen, desktop
+// lg -> large screen, wide desktop
+// xl -> cinema!
+
+// font-family for IE8 :) 
+*/
+
+#resizer {
+  -webkit-transition: all .001s;
+  -moz-transition: all .001s;
+  -ms-transition: all .001s;
+  -o-transition: all .001s;
+  transition: all .001s;
+  z-index: 1;
+  border:1px solid black;
+  position: absolute;
+  top: -9999px;
+  top: -9999px;
+  width: 50px;
+  font-family: "xs";
+}
+@media only screen and (min-width: 480px) {
+  #resizer {
+    width: 150px;
+    font-family: "sm";
+  }
+}
+@media only screen and (min-width: 768px) {
+  #resizer {
+    width: 250px;
+    font-family: "md";
+  }
+}
+@media only screen and (min-width: 992px) {
+  #resizer {
+    width: 300px;
+    font-family: "lg";
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #resizer {
+    width: 350px;
+    font-family: "xl";
+  }
+}
+#resizer:after {
+  content: "xs";
+}
+@media only screen and (min-width: 480px) {
+  #resizer:after {
+    content: "sm";
+  }
+}
+@media only screen and (min-width: 768px) {
+  #resizer:after {
+    content: "md";
+  }
+}
+@media only screen and (min-width: 992px) {
+  #resizer:after {
+    content: "lg";
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #resizer:after {
+    content: "xl";
+  }
+}
