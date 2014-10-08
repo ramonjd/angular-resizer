@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>resizer</title>
+    <style>
+        /* throw away styles */
+        body {
+            padding: 0;
+            margin:0;
+            height: 100%;
+            width: 100%;
+            position:relative;
+            background:#fff;
+            color:rgba(0,0,0,1);
+            font-family: Arial, sans-serif;
+            font-weight: 400;
+            font-size:82.5%;
+        }
+
+        section {
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            box-sizing:border-box;
+            position: relative;
+            background-position: top right;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            margin:2em;
+            padding:3em;
+        }
+        
+        div {
+           opacity:0.5; 
+        }
+        
+        button {
+            background:white;
+            border:1px solid #ccc;
+            padding:1em;
+            font-size:1em;
+            cursor:pointer;
+        }
+
+        button:hover, button.active {
+            background:#ccc;
+        }
+
+        .registered div {
+            opacity:1;
+        }
+
+        h1 {
+            font-size:5em;
+            margin:0 0 .5em 0;
+            line-height: 1;
+            max-width: 2em;
+        }
+
+        h2 {
+            font-size:3em;
+            margin:0 0 .2em 0;
+            line-height: 1.8;
+            letter-spacing:.05em;
+        }
+
+        strong {
+            display: block;
+            margin:.3em .5em 0 0;
+            padding:.3em .5em;
+            line-height: 1;
+            font-size:2em;
+            background: rgba(187, 229, 249, 1);
+            border-left:.5em solid #3387c4;
+            color:#3387c4;
+        }
+
+        @media only screen and (min-width: 480px) {
+            strong {
+                background: rgba(187, 229, 249, 0.2);
+            }
+        }
+        @media only screen and (min-width: 768px) {
+            strong {
+                background: rgba(187, 229, 249, 0.4);
+            }
+        }
+        @media only screen and (min-width: 992px) {
+            strong {
+                background: rgba(187, 229, 249, 0.6);
+            }
+        }
+        @media only screen and (min-width: 1200px) {
+            strong {
+                background: rgba(187, 229, 249, 0.8);
+            }
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="css/resizer.css">
+    
+</head>
+
+<body ng-controller="AppCtrl">
+
+    <section ng-class="{'registered' : registered}">
+
+        <header>
+            <h1>resizer</h1>
+            <button ng-click="deregister()" ng-class="{'active' : !registered}">{{deregisterButtonText}}</button> <button ng-click="register()" ng-class="{'active' : registered}">{{registerButtonText}}</button>
+        </header>
+
+        <div>
+            <h2>breakpoint</h2>
+            <p><strong class="breakpoint">{{breakpoint}}</strong></p>
+            <p><em>Returns: {string} xs, sm, md, lg</em></p>
+            <h2>device orientation</h2>
+            <p><strong class="orientation">{{orientation}}</strong></p>
+            <p><em>Returns: {string} landscape, portrait</em></p>
+            <h2>resize direction</h2>
+            <p><strong class="direction">x: {{directionX}}, y: {{directionY}}</strong></p>
+            <p><em>Returns: {object} x, y (-1 === decreasing, 1 === increasing)</em></p>
+        </div>
+    </section>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="js/resizer.js"></script>
+    <script src="js/app.js"></script>
+    <script src="//localhost:35729/livereload.js"></script>
+</body>
+
+</html>
