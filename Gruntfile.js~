@@ -4,10 +4,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         express: {
             server: {
-                livereload : true,
-                options: {
-                    bases: ['app']
-                }
+                livereload : true
             }
         },
         open: {

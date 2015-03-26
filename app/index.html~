@@ -129,7 +129,7 @@
     </section>
 
     <script src="js/jquery.js"></script>
-    <script src="js/angular.js"></script>
+    <script src="js/angular.min.js"></script>
     <script src="js/resizer.js"></script>
     <script src="js/app.js"></script>
     <script src="//localhost:35729/livereload.js"></script>
